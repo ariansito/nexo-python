@@ -1,0 +1,1 @@
+FROM hub.furycloud.io/mercadolibre/distroless-python:3.11-mini

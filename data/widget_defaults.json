@@ -1,0 +1,34 @@
+{
+  "fl_chat": {
+    "x": 5,
+    "y": 506,
+    "anchorRight": false,
+    "anchorBottom": true,
+    "xPct": 0.0032552083333333335,
+    "yPct": 0.006321112515802781
+  },
+  "fl_players": {
+    "x": 9,
+    "y": 88,
+    "anchorRight": false,
+    "anchorBottom": false,
+    "xPct": 0.005859375,
+    "yPct": 0.11125158027812895
+  },
+  "fl_combat": {
+    "x": 1368,
+    "y": 53,
+    "anchorRight": true,
+    "anchorBottom": false,
+    "xPct": 0.005208333333333333,
+    "yPct": 0.06700379266750948
+  },
+  "fl_toolbar": {
+    "x": 484,
+    "y": 709,
+    "anchorRight": false,
+    "anchorBottom": true,
+    "xPct": 0.3151041666666667,
+    "yPct": 0.023767382094893232
+  }
+}

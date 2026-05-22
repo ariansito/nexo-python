@@ -1,0 +1,144 @@
+[
+  {
+    "id": "u_1774617337591",
+    "username": "arian",
+    "passwordHash": "scrypt:f7ffe8f9983a0216a90f8c241a453b3d:f9f7593edde55576a7b8862dcffb44683cc1864677b84e14450bfaae299ce8ea21996a1ddaad8f92ea153472a067cbdc2c4a16121356c1bf05ce034bde086449",
+    "role": "admin",
+    "position": {
+      "x": 1472,
+      "y": 435
+    },
+    "muted": false,
+    "avatar": {
+      "character": 0,
+      "facing": 3,
+      "inKart": false
+    }
+  },
+  {
+    "id": "u_1774625456578",
+    "username": "test",
+    "passwordHash": "scrypt:8724594fe64ee07624216844327c618e:f1a5857dcc7baa130b062eb8dea84b5c36a9d1b35cc02474bf05330f0e8c158b060937767aa9cc4d9e4df5d7db17220a0286d6eac1ad8ce9281da9d536446476",
+    "muted": true,
+    "position": {
+      "x": 1380,
+      "y": 511
+    }
+  },
+  {
+    "id": "u_1774628256470",
+    "username": "ariansito",
+    "passwordHash": "scrypt:88e1677ccb72297ee5042bbec953d776:acf3ceb73e5e84376609acd08491a9887ee6665ff27340dd7c893723812c1e36fcd8cd629095f5c018e1c555348454725a160d4649912fd7ae359f347192bf0c",
+    "position": {
+      "x": 1510,
+      "y": 1380
+    },
+    "muted": true
+  },
+  {
+    "id": "u_1776175068683",
+    "username": "ave",
+    "passwordHash": "scrypt:90bed4a52ab375f124261a75905ae9ba:b9157bf8a82104fd6689862a108bdd7bffe3b4422fc3d676bfdf6758dd68da475c36cb6bd2072295a62c75c76fc116dec0078b1590adf574107db6cfc9b81e69",
+    "position": {
+      "x": 1145,
+      "y": 428
+    },
+    "muted": true,
+    "avatar": {
+      "character": 0,
+      "facing": 2,
+      "inKart": false
+    }
+  },
+  {
+    "id": "u_1776175209240",
+    "username": "Juankli",
+    "passwordHash": "scrypt:8b734d71b32844a62c54c7fa26e26c06:d36a5fb43dcc3f6a0dd35163ddd2bb0e8ad01b8f010e4906785d2726a4b85253dda349a03f1b989bd930b0af308644b72c6db8978e6e401439d863d6f6c23536",
+    "position": {
+      "x": 1138,
+      "y": 573
+    },
+    "muted": false,
+    "avatar": {
+      "character": 0,
+      "facing": 3,
+      "inKart": false
+    }
+  },
+  {
+    "id": "u_1776273539659",
+    "username": "qa_tester_99",
+    "passwordHash": "scrypt:dcd55c59b9466704eee1852d058a7675:2d5dec0a734deda4e3c9adedea9cb490ae04ba3560e0f2048f0359637ccb20be274e263b4e9e07e452c2a077ccead6a03dad819cddc4eb881619ae278b371447"
+  },
+  {
+    "id": "u_1776274747189",
+    "username": "' OR 1=1--",
+    "passwordHash": "scrypt:d68c39a4549b4bede863425b1cccda93:0ddae42d398233bf73e1519967ea0092f8594b679828a6e6ada9492d6f04d8a42bb7b3c92781ecdca62a0d9de35749e7ac7059d8d231dfff07b3a43499982afa"
+  },
+  {
+    "id": "u_1776277718956",
+    "username": "demo718929",
+    "passwordHash": "scrypt:765c0d923b01e58ba75af8389eeb7abe:cbfc3dd2ef26b49fe1b38109cc258fb9de87885e86fd3f3df70c64772630fae9f755b832e8f58fa2f324a6fe32ead55d9f184c57e2ddfb422b465a9e0a803d3c"
+  },
+  {
+    "id": "u_1776277829612",
+    "username": "nexo29577",
+    "passwordHash": "scrypt:0a92acc3586e4762f6b632309a5f99c2:6f1ab42cd8e27ee99a26cd85b00f093b37b25328d010b481fe69ae612f43d18c5a808f8df3b07766ac92c53790bed040789d8962bb924178c6dd8b6d0bd78c3c"
+  },
+  {
+    "id": "u_1776277978151",
+    "username": "shot78112",
+    "passwordHash": "scrypt:5473aaeca81d92be9e4d16843f1e4e6d:c53f86946c544ab719559a44e8f3e322fc330598e44d35044c94ff9d6f1fabcec5b7a2bb0ae7e295b692c7ec43226140f1bbac932260cbc09caa8aa08b81442a",
+    "position": {
+      "x": 1495,
+      "y": 1400
+    }
+  },
+  {
+    "id": "u_1776278197899",
+    "username": "shot97857",
+    "passwordHash": "scrypt:116c7d4b57022b36a966bb0ef8e4f759:078bdbf0719aa26b6351c5eb8056537dbe12e3927085a64fcdee5053f9bd30636a4bd73c9d163de1bc0093822129d6001165dab552b95a34dac2c4f85f16b1ad",
+    "position": {
+      "x": 1812,
+      "y": 1354
+    }
+  },
+  {
+    "id": "u_1776281036032",
+    "username": "tupapi",
+    "passwordHash": "scrypt:e563b13f7afa4fa1bfc90145566c56e8:1781a981ba88781dab1d6e3275762d80d442d62ca8b6de652a5da52851e8fa6accb520a1e6ac236075e06729958258b5c2837835e6ca16c276c4ce9bcb8282c3",
+    "position": {
+      "x": 1332,
+      "y": 784
+    },
+    "avatar": {
+      "character": 1,
+      "facing": 0,
+      "inKart": false
+    }
+  },
+  {
+    "id": "u_1776281075948",
+    "username": "netanyahu",
+    "passwordHash": "scrypt:d256a45236c0f28533b8999179a09337:92e64d2bd3bc92bb42b694d814988cde9ac1cbf34b25c7e9eb8512a11850dfab5ca38432a9e642bcf40541c789d5064ccf6d37cd23eecf5a29810a3a387d0644",
+    "position": {
+      "x": 873,
+      "y": -8
+    },
+    "avatar": {
+      "character": 0,
+      "facing": 0,
+      "inKart": false
+    }
+  },
+  {
+    "id": "u_1776281248319",
+    "username": "turtul1",
+    "passwordHash": "scrypt:fa3abfb6e16e206e8b6475ad14ceffcd:6b0fbe7beace6880cb2f285eb2c443db8d25143757c729857f612a1fc90980cc73f494fb473df2e64ee62def0a6a23819303c4567f652b751e8ee0884b0c57cf",
+    "position": {
+      "x": 1215,
+      "y": 253
+    },
+    "muted": true
+  }
+]

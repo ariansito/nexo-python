@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXO — Oficina Virtual Intranet</title>
+<style>
+@font-face{font-family:'Press Start 2P';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/PressStart2P.woff2') format('woff2');}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  background:#0d1020;
+  color:#e8eaf6;
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+:root{
+  --bg:#0d1020;
+  --surface:#1a1f3c;
+  --s2:#252a4a;
+  --s3:#2f3560;
+  --border:#3d4475;
+  --text:#e8eaf6;
+  --muted:#8892b8;
+  --accent:#00c8a0;
+  --primary:#6366f1;
+  --success:#22c55e;
+  --warn:#f59e0b;
+  --danger:#ef4444;
+  --pink:#ec4899;
+  --px2:'Press Start 2P',monospace;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(13,16,32,0.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  height:52px;
+  display:flex;align-items:center;
+  padding:0 32px;gap:24px;
+}
+.nav-logo{
+  font-family:var(--px2);
+  font-size:14px;
+  color:var(--accent);
+  text-shadow:2px 2px 0 rgba(0,0,0,.6);
+  letter-spacing:2px;
+}
+.nav-links{display:flex;gap:20px;margin-left:auto}
+.nav-links a{
+  font-size:13px;color:var(--muted);text-decoration:none;
+  transition:color .15s;
+}
+.nav-links a:hover{color:var(--text)}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  padding:100px 24px 80px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99,102,241,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(0,200,160,0.08) 0%, transparent 60%);
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(61,68,117,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(61,68,117,0.15) 1px, transparent 1px);
+  background-size:40px 40px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 0%, black 20%, transparent 80%);
+}
+.hero-content{position:relative;z-index:1;max-width:760px;margin:0 auto}
+
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,200,160,0.1);
+  border:1px solid rgba(0,200,160,0.3);
+  color:var(--accent);
+  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  padding:6px 16px;border-radius:100px;
+  margin-bottom:32px;
+}
+.hero-tag-dot{
+  width:6px;height:6px;border-radius:50%;background:var(--accent);
+  animation:pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.5;transform:scale(1.5)}
+}
+
+.hero-logo{
+  font-family:var(--px2);
+  font-size:clamp(40px,10vw,88px);
+  color:var(--text);
+  text-shadow:
+    4px 4px 0 rgba(0,0,0,.8),
+    0 0 60px rgba(99,102,241,0.5),
+    0 0 120px rgba(0,200,160,0.2);
+  line-height:1.1;
+  margin-bottom:24px;
+  letter-spacing:4px;
+}
+.hero-logo span{color:var(--accent)}
+
+.hero-sub{
+  font-size:clamp(18px,3vw,26px);
+  font-weight:600;
+  color:var(--text);
+  line-height:1.4;
+  margin-bottom:16px;
+}
+
+.hero-desc{
+  font-size:15px;
+  color:var(--muted);
+  line-height:1.7;
+  max-width:520px;
+  margin:0 auto 40px;
+}
+
+.problems{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+  margin-bottom:44px;
+}
+.problem-pill{
+  background:rgba(239,68,68,0.08);
+  border:1px solid rgba(239,68,68,0.25);
+  color:#fca5a5;
+  font-size:12px;padding:7px 14px;border-radius:8px;
+  display:flex;align-items:center;gap:7px;
+}
+.problem-pill::before{content:'✗';color:var(--danger);font-weight:800;font-size:11px}
+
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-cta{
+  padding:13px 28px;border-radius:8px;font-size:14px;font-weight:700;
+  cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  transition:all .15s;border:2px solid transparent;
+}
+.btn-cta.primary{
+  background:var(--primary);color:#fff;
+  border-color:#4f52d1;
+  box-shadow:0 0 30px rgba(99,102,241,0.35),2px 2px 0 rgba(0,0,0,.5);
+}
+.btn-cta.primary:hover{background:#818cf8;box-shadow:0 0 40px rgba(99,102,241,0.5),2px 2px 0 rgba(0,0,0,.5);transform:translateY(-1px)}
+.btn-cta.secondary{
+  background:transparent;color:var(--text);
+  border-color:var(--border);
+  box-shadow:2px 2px 0 rgba(0,0,0,.4);
+}
+.btn-cta.secondary:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ── SECTION COMMON ── */
+.section{padding:80px 24px;max-width:1040px;margin:0 auto}
+.section-label{
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:12px;
+}
+.section-title{
+  font-size:clamp(24px,4vw,40px);font-weight:800;line-height:1.25;
+  margin-bottom:14px;
+}
+.section-desc{
+  font-size:15px;color:var(--muted);max-width:580px;line-height:1.7;
+  margin-bottom:52px;
+}
+
+/* ── COMPARISON ── */
+#comparison{
+  background:linear-gradient(180deg, transparent, rgba(99,102,241,0.04) 40%, transparent);
+  padding:80px 24px;
+}
+.compare-wrap{max-width:1000px;margin:0 auto}
+.compare-header{text-align:center;margin-bottom:52px}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+
+.compare-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;padding:28px 24px;
+}
+.compare-card.nexo{
+  border-color:var(--accent);
+  background:linear-gradient(160deg, rgba(0,200,160,0.07), var(--surface));
+  box-shadow:0 0 40px rgba(0,200,160,0.12),2px 2px 0 rgba(0,0,0,.3);
+  position:relative;
+}
+.compare-badge{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--accent);color:#000;
+  font-size:10px;font-weight:800;letter-spacing:1px;
+  padding:4px 14px;border-radius:100px;white-space:nowrap;
+}
+.compare-card h3{
+  font-size:17px;font-weight:700;margin-bottom:18px;
+  display:flex;align-items:center;gap:8px;
+}
+.compare-card.nexo h3{color:var(--accent)}
+.compare-card h3 .logo-small{
+  font-family:var(--px2);font-size:11px;
+  color:var(--accent);
+}
+.compare-list{list-style:none}
+.compare-list li{
+  font-size:13px;padding:7px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  display:flex;align-items:flex-start;gap:9px;color:var(--muted);
+  line-height:1.4;
+}
+.compare-list li:last-child{border:none}
+.cico{
+  width:18px;height:18px;flex-shrink:0;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:800;margin-top:1px;
+}
+.cico.con{background:rgba(239,68,68,0.12);color:var(--danger)}
+.cico.pro{background:rgba(0,200,160,0.12);color:var(--accent)}
+.compare-list li.pro{color:var(--text)}
+
+/* ── DEMO ── */
+#demo{padding:80px 24px;text-align:center}
+.demo-header{max-width:760px;margin:0 auto 36px}
+
+.demo-window{
+  max-width:1000px;margin:0 auto;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 24px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,0.03);
+}
+.demo-titlebar{
+  background:var(--s2);border-bottom:1px solid var(--border);
+  padding:10px 16px;
+  display:flex;align-items:center;gap:12px;
+}
+.win-dots{display:flex;gap:6px}
+.win-dot{width:12px;height:12px;border-radius:50%}
+.win-dot.r{background:#ef4444}.win-dot.y{background:#f59e0b}.win-dot.g{background:#22c55e}
+.win-title{font-size:12px;color:var(--muted);font-family:monospace}
+.win-status{
+  margin-left:auto;display:flex;align-items:center;gap:6px;
+  font-size:11px;color:var(--muted);
+}
+.online-dot{width:7px;height:7px;border-radius:50%;background:var(--success);animation:bl 1.4s infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:0.3}}
+
+.demo-body{display:flex;align-items:stretch}
+#gameCanvas{display:block;flex-shrink:0;image-rendering:pixelated}
+
+.demo-panel{
+  width:220px;flex-shrink:0;
+  border-left:1px solid var(--border);
+  background:var(--s2);
+  display:flex;flex-direction:column;
+  font-size:12px;
+}
+.panel-sec{padding:12px 14px;border-bottom:1px solid var(--border)}
+.panel-label{
+  font-size:9px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:8px;
+}
+.panel-room{font-size:13px;font-weight:700;color:var(--accent)}
+.panel-room-sub{font-size:11px;color:var(--muted);margin-top:3px}
+
+.player-list{display:flex;flex-direction:column;gap:5px}
+.player-row{display:flex;align-items:center;gap:7px}
+.player-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.player-name{flex:1;font-size:12px}
+.player-badge{
+  font-size:9px;padding:2px 7px;border-radius:4px;
+  background:rgba(34,197,94,0.12);color:var(--success);font-weight:600;
+}
+.player-badge.voice{background:rgba(99,102,241,0.15);color:#a78bfa}
+
+.chat-panel{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0}
+.chat-inner{flex:1;overflow:hidden;padding:10px 12px;display:flex;flex-direction:column;gap:6px;justify-content:flex-end}
+.chat-entry{font-size:11px;line-height:1.45;animation:slideUp .25s ease}
+@keyframes slideUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.chat-entry .who{font-weight:700;margin-right:3px}
+.chat-entry .msg{color:var(--muted)}
+
+.panel-hint{
+  padding:8px 12px;border-top:1px solid var(--border);
+  font-size:10px;color:var(--muted);text-align:center;
+}
+
+/* ── FEATURES ── */
+#features{
+  padding:80px 24px;
+  background:linear-gradient(180deg, transparent, rgba(0,200,160,0.03) 50%, transparent);
+}
+.feat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;
+  max-width:1000px;margin:0 auto;
+}
+.feat-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;padding:22px 18px;
+  transition:all .18s;
+}
+.feat-card:hover{
+  border-color:var(--accent);
+  transform:translateY(-3px);
+  box-shadow:0 8px 32px rgba(0,200,160,0.12);
+}
+.feat-icon{font-size:26px;margin-bottom:11px;display:block;line-height:1}
+.feat-name{font-size:13px;font-weight:700;margin-bottom:7px;color:var(--text)}
+.feat-desc{font-size:11px;color:var(--muted);line-height:1.6}
+.feat-tag{
+  display:inline-block;margin-top:10px;
+  font-size:9px;font-weight:700;letter-spacing:1px;
+  padding:2px 8px;border-radius:4px;
+  background:rgba(0,200,160,0.1);color:var(--accent);
+  text-transform:uppercase;
+}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--border);
+  padding:52px 24px;text-align:center;
+  background:var(--surface);
+}
+.footer-logo{
+  font-family:var(--px2);font-size:22px;
+  color:var(--accent);
+  text-shadow:2px 2px 0 rgba(0,0,0,.6);
+  margin-bottom:14px;
+  letter-spacing:3px;
+}
+.footer-tagline{font-size:14px;color:var(--muted);margin-bottom:20px}
+.footer-stack{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+}
+.footer-pill{
+  font-size:11px;padding:4px 12px;border-radius:6px;
+  background:var(--s2);border:1px solid var(--border);color:var(--muted);
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:800px){
+  .compare-grid{grid-template-columns:1fr}
+  .demo-panel{display:none}
+  #gameCanvas{width:100%!important;height:auto!important}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  .problems{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">NEXO</div>
+  <div class="nav-links">
+    <a href="#comparison">Comparativa</a>
+    <a href="#demo">Demo</a>
+    <a href="#features">Funcionalidades</a>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="hero-tag-dot"></span>
+      Intranet · LAN · Sin internet · 100% tuyo
+    </div>
+
+    <div class="hero-logo">NE<span>X</span>O</div>
+
+    <h1 class="hero-sub">Tu oficina virtual en la intranet</h1>
+    <p class="hero-desc">
+      Mantené a tu equipo conectado con presencia visual real, voz WebRTC y comunicación asíncrona.
+      Sin depender de internet, sin pagar por herramientas externas, sin que tus datos salgan de tu red.
+    </p>
+
+    <div class="problems">
+      <div class="problem-pill">Discord — depende de internet externo</div>
+      <div class="problem-pill">Gather.town — $7/usuario/mes, datos en la nube</div>
+      <div class="problem-pill">Sin tool → equipo invisible entre sí</div>
+    </div>
+
+    <div class="cta-row">
+      <a href="#demo" class="btn-cta primary">▶ &nbsp;Ver demo interactiva</a>
+      <a href="#features" class="btn-cta secondary">Ver funcionalidades →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ COMPARATIVA ══════════════ -->
+<section id="comparison">
+  <div class="compare-wrap">
+    <div class="compare-header">
+      <div class="section-label">Comparativa</div>
+      <h2 class="section-title">¿Por qué no las alternativas?</h2>
+      <p class="section-desc" style="margin:0 auto">
+        Las herramientas genéricas fallan para equipos de intranet. NEXO nació específicamente para este caso de uso.
+      </p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <h3>Discord</h3>
+        <ul class="compare-list">
+          <li><span class="cico con">✗</span>Requiere internet externo siempre</li>
+          <li><span class="cico con">✗</span>No hay presencia visual en mapa</li>
+          <li><span class="cico con">✗</span>Datos en servidores de terceros</li>
+          <li><span class="cico con">✗</span>Compliance y seguridad imposibles</li>
+          <li><span class="cico con">✗</span>Sin integración con monitoreo interno</li>
+          <li><span class="cico con">✗</span>Notificaciones de contextos distintos mezclan todo</li>
+        </ul>
+      </div>
+
+      <div class="compare-card">
+        <h3>Gather.town</h3>
+        <ul class="compare-list">
+          <li><span class="cico con">✗</span>$7 por usuario por mes</li>
+          <li><span class="cico con">✗</span>Requiere internet — no funciona solo en LAN</li>
+          <li><span class="cico con">✗</span>Datos alojados en la nube externa</li>
+          <li><span class="cico con">✗</span>Lento y pesado para LANs corporativas</li>
+          <li><span class="cico con">✗</span>Sin customización real para tu contexto</li>
+          <li><span class="cico con">✗</span>No se puede integrar con herramientas propias</li>
+        </ul>
+      </div>
+
+      <div class="compare-card nexo">
+        <div class="compare-badge">✓ Recomendado</div>
+        <h3><span class="logo-small">NEXO</span></h3>
+        <ul class="compare-list">
+          <li class="pro"><span class="cico pro">✓</span>100% intranet — funciona sin internet</li>
+          <li class="pro"><span class="cico pro">✓</span>Costo cero — código propio, en tu infra</li>
+          <li class="pro"><span class="cico pro">✓</span>Datos en tus servidores (Fury / LAN)</li>
+          <li class="pro"><span class="cico pro">✓</span>Presencia visual real: sabés dónde está cada uno</li>
+          <li class="pro"><span class="cico pro">✓</span>Integrado con panel de monitoreo</li>
+          <li class="pro"><span class="cico pro">✓</span>Totalmente customizable para tu equipo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ DEMO ══════════════ -->
+<section id="demo">
+  <div class="demo-header">
+    <div class="section-label">Demo Interactiva</div>
+    <h2 class="section-title">Probalo ahora mismo</h2>
+    <p class="section-desc" style="margin:0 auto 0">
+      Usá <strong style="color:var(--text)">WASD</strong> o las <strong style="color:var(--text)">flechas</strong> para moverte.
+      Los otros personajes son tus compañeros de equipo conectados en tiempo real.
+    </p>
+  </div>
+
+  <div class="demo-window">
+    <div class="demo-titlebar">
+      <div class="win-dots">
+        <div class="win-dot r"></div>
+        <div class="win-dot y"></div>
+        <div class="win-dot g"></div>
+      </div>
+      <span class="win-title">nexo://intranet/oficina-principal</span>
+      <div class="win-status">
+        <span class="online-dot"></span>
+        <span id="onlineCount">5 conectados</span>
+      </div>
+    </div>
+
+    <div class="demo-body">
+      <canvas id="gameCanvas" width="780" height="440"></canvas>
+
+      <div class="demo-panel">
+        <div class="panel-sec">
+          <div class="panel-label">Tu ubicación</div>
+          <div class="panel-room" id="panelRoom">Corredor</div>
+          <div class="panel-room-sub" id="panelRoomSub"></div>
+        </div>
+
+        <div class="panel-sec">
+          <div class="panel-label">Conectados</div>
+          <div class="player-list">
+            <div class="player-row">
+              <div class="player-dot" style="background:#22c55e"></div>
+              <span class="player-name">Tú</span>
+              <span class="player-badge">online</span>
+            </div>
+            <div class="player-row">
+              <div class="player-dot" style="background:#6366f1"></div>
+              <span class="player-name">Carlos</span>
+              <span class="player-badge" id="b-carlos">online</span>
+            </div>
+            <div class="player-row">
+              <div class="player-dot" style="background:#f59e0b"></div>
+              <span class="player-name">Ana</span>
+              <span class="player-badge" id="b-ana">online</span>
+            </div>
+            <div class="player-row">
+              <div class="player-dot" style="background:#ef4444"></div>
+              <span class="player-name">Luis</span>
+              <span class="player-badge" id="b-luis">online</span>
+            </div>
+            <div class="player-row">
+              <div class="player-dot" style="background:#ec4899"></div>
+              <span class="player-name">Marta</span>
+              <span class="player-badge" id="b-marta">online</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-panel">
+          <div class="panel-sec" style="padding-bottom:6px">
+            <div class="panel-label" style="margin-bottom:0">Chat</div>
+          </div>
+          <div class="chat-inner" id="chatFeed"></div>
+        </div>
+
+        <div class="panel-hint">WASD / ↑↓←→ para moverte</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FEATURES ══════════════ -->
+<section id="features">
+  <div class="section" style="padding-bottom:0">
+    <div class="section-label">Funcionalidades</div>
+    <h2 class="section-title">Lo que trae la versión completa</h2>
+    <p class="section-desc">
+      Cada módulo fue diseñado para el contexto específico de un equipo de operaciones en intranet.
+    </p>
+  </div>
+
+  <div style="max-width:1000px;margin:0 auto;padding:0 24px 80px">
+    <div class="feat-grid">
+      <div class="feat-card">
+        <span class="feat-icon">🗺️</span>
+        <div class="feat-name">Oficina Multiplayer</div>
+        <div class="feat-desc">Posición sincronizada en tiempo real via WebSocket. Ves exactamente dónde está cada miembro en el mapa.</div>
+        <span class="feat-tag">WebSocket</span>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🎙️</span>
+        <div class="feat-name">Voz WebRTC</div>
+        <div class="feat-desc">Comunicación de voz peer-to-peer directo en la LAN. Sin servidores externos, cero latencia adicional.</div>
+        <span class="feat-tag">WebRTC P2P</span>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">💬</span>
+        <div class="feat-name">Chat en Tiempo Real</div>
+        <div class="feat-desc">Chat global, por sala y mensajes directos. Historial persistente. Burbujas de chat visibles en el mapa.</div>
+        <span class="feat-tag">Realtime</span>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🎫</span>
+        <div class="feat-name">Sistema de Tickets</div>
+        <div class="feat-desc">Comunicación asíncrona dirigida por rol (admin/jefe/operador), a todos o a persona específica. Estado seen/closed.</div>
+        <span class="feat-tag">Asíncrono</span>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🌍</span>
+        <div class="feat-name">Multi-Mundo</div>
+        <div class="feat-desc">Múltiples oficinas virtuales. Editor de mapa integrado con salas, paredes, pisos y objetos custom con rotación.</div>
+        <span class="feat-tag">Editor</span>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🎭</span>
+        <div class="feat-name">Avatar Personalizable</div>
+        <div class="feat-desc">Personaje pixel art con editor completo: skin, pelo, outfit. Modo kart incluido. Te representa en el mundo.</div>
+        <span class="feat-tag">Pixel Art</span>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">🔊</span>
+        <div class="feat-name">Soundboard</div>
+        <div class="feat-desc">5 slots de audio para broadcast a la sala. MP3 custom. Ideal para alertas sonoras del equipo de turno.</div>
+        <span class="feat-tag">Broadcast</span>
+      </div>
+      <div class="feat-card">
+        <span class="feat-icon">📊</span>
+        <div class="feat-name">Monitor Records</div>
+        <div class="feat-desc">Integración directa con el panel de monitoreo. Métricas y registros viven dentro de la misma herramienta.</div>
+        <span class="feat-tag">Integración</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-logo">NEXO</div>
+  <div class="footer-tagline">Hecho para el equipo · Corre en tu intranet · Sin costos externos</div>
+  <div class="footer-stack">
+    <span class="footer-pill">Node.js 20</span>
+    <span class="footer-pill">WebSocket</span>
+    <span class="footer-pill">WebRTC</span>
+    <span class="footer-pill">Canvas 2D</span>
+    <span class="footer-pill">Docker</span>
+    <span class="footer-pill">Fury</span>
+  </div>
+</footer>
+
+<!-- ══════════════ DEMO CANVAS SCRIPT ══════════════ -->
+<script>
+(function(){
+'use strict';
+
+// ── roundRect polyfill ──
+if(!CanvasRenderingContext2D.prototype.roundRect){
+  CanvasRenderingContext2D.prototype.roundRect=function(x,y,w,h,r){
+    r=Math.min(r,w/2,h/2);
+    this.moveTo(x+r,y);
+    this.arcTo(x+w,y,x+w,y+h,r);
+    this.arcTo(x+w,y+h,x,y+h,r);
+    this.arcTo(x,y+h,x,y,r);
+    this.arcTo(x,y,x+w,y,r);
+    this.closePath();
+    return this;
+  };
+}
+
+const canvas = document.getElementById('gameCanvas');
+const ctx    = canvas.getContext('2d');
+const W = canvas.width, H = canvas.height;
+
+// ── PALETTE ──
+const C = {
+  bg      : '#0d1020',
+  floor   : '#111428',
+  grid    : 'rgba(61,68,117,0.18)',
+  surface : '#1a1f3c',
+  border  : '#3d4475',
+};
+
+// ── ROOMS ──
+const ROOMS = [
+  { id:'monitor', name:'CENTRO DE MONITOREO', x:30, y:30, w:290, h:165,
+    fill:'rgba(99,102,241,0.055)', stroke:'#6366f1', label:'#a78bfa' },
+  { id:'meeting', name:'SALA DE REUNIONES',   x:470, y:30, w:275, h:150,
+    fill:'rgba(0,200,160,0.05)',   stroke:'#00c8a0', label:'#34d399' },
+  { id:'break',   name:'SALA DE DESCANSO',    x:185, y:295, w:365, h:125,
+    fill:'rgba(245,158,11,0.05)',  stroke:'#f59e0b', label:'#fbbf24' },
+];
+
+// ── FURNITURE / DECOR ──
+const DECOR = [
+  // Monitor room desks
+  {x:55, y:60, w:65,h:32,c:'#1e2240'},{x:140,y:60, w:65,h:32,c:'#1e2240'},{x:225,y:60, w:65,h:32,c:'#1e2240'},
+  {x:55, y:140,w:65,h:32,c:'#1e2240'},{x:140,y:140,w:65,h:32,c:'#1e2240'},
+  // Meeting room table
+  {x:500,y:72, w:185,h:75,c:'#152215'},
+  // Break room seats
+  {x:210,y:320,w:75,h:45,c:'#221808'},{x:380,y:320,w:75,h:45,c:'#221808'},
+  {x:295,y:340,w:55,h:35,c:'#110f05'},
+];
+
+// Monitor screens (glowing)
+const SCREENS = [
+  {x:58, y:55, w:59,h:22,c:'rgba(99,102,241,0.55)'},
+  {x:143,y:55, w:59,h:22,c:'rgba(239,68,68,0.5)'},
+  {x:228,y:55, w:59,h:22,c:'rgba(34,197,94,0.5)'},
+  {x:58, y:135,w:59,h:22,c:'rgba(245,158,11,0.5)'},
+  {x:143,y:135,w:59,h:22,c:'rgba(99,102,241,0.4)'},
+];
+
+// ── PLAYER ──
+const player = {
+  x:385, y:225, speed:130,
+  color:'#22c55e', name:'Tú', size:13,
+  isPlayer:true,
+};
+
+// ── NPCs ──
+const NPCS = [
+  { id:'carlos', name:'Carlos', color:'#6366f1', x:145,y:115, size:12,
+    tx:145, ty:115, wait:0, chatCD:2,
+    msgs:['revisando alarmas 🔍','todo en verde ✓','nueva métrica subió','turno en 10 min','¿alguien ve el dashboard?'] },
+  { id:'ana',    name:'Ana',    color:'#f59e0b', x:555,y:95,  size:12,
+    tx:555, ty:95,  wait:0, chatCD:5,
+    msgs:['¿alguien en reuniones?','me sumo en 5 min','veo la sala libre','confirmado ✓','espérenme'] },
+  { id:'luis',   name:'Luis',   color:'#ef4444', x:310,y:345, size:12,
+    tx:310, ty:345, wait:0, chatCD:8,
+    msgs:['alarma resuelta ✓','tomando descanso','vuelvo en 2 min','⚠️ revisar server-03','jeje ok'] },
+  { id:'marta',  name:'Marta',  color:'#ec4899', x:455,y:215, size:12,
+    tx:455, ty:215, wait:0, chatCD:3,
+    msgs:['buenos días equipo','listo el reporte','nueva sesión ✓','cubriendo hasta las 6','👍'] },
+];
+
+// ── WAYPOINTS ──
+const WPTS = [
+  // Monitor room
+  {x:75, y:105},{x:155,y:95},{x:245,y:155},{x:95, y:155},{x:195,y:115},{x:280,y:80},
+  // Meeting room
+  {x:510,y:65},{x:610,y:125},{x:680,y:75},{x:550,y:145},{x:700,y:120},
+  // Break room
+  {x:230,y:340},{x:365,y:350},{x:490,y:340},{x:310,y:315},
+  // Corridors
+  {x:380,y:205},{x:420,y:245},{x:340,y:265},{x:455,y:185},{x:320,y:180},
+];
+
+function pickTarget(npc){
+  const w = WPTS[Math.floor(Math.random()*WPTS.length)];
+  npc.tx = w.x + (Math.random()-.5)*28;
+  npc.ty = w.y + (Math.random()-.5)*18;
+  npc.wait = 1.5 + Math.random()*3.5;
+}
+
+// ── KEYBOARD ──
+const keys = {};
+document.addEventListener('keydown', e=>{
+  const relevant = ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d','W','A','S','D'];
+  if(relevant.includes(e.key)){
+    keys[e.key]=true;
+    e.preventDefault();
+  }
+});
+document.addEventListener('keyup', e=>{ keys[e.key]=false; });
+
+// ── CHAT ──
+const chatHistory = [];
+let chatTimer = 2500;
+
+function addChat(npc, text){
+  chatHistory.push({name:npc.name, color:npc.color, text});
+  if(chatHistory.length > 7) chatHistory.shift();
+  npc.bubble = {text, life:3.2};
+  renderChat();
+}
+
+function renderChat(){
+  const feed = document.getElementById('chatFeed');
+  if(!feed) return;
+  const recent = chatHistory.slice(-5);
+  feed.innerHTML = recent.map(m=>
+    `<div class="chat-entry"><span class="who" style="color:${m.color}">${m.name}:</span><span class="msg">${m.msg||m.text}</span></div>`
+  ).join('');
+}
+
+// ── VOICE ──
+let voiceNpc = null;
+let voiceTimer = 6;
+let voiceIdx = 0;
+let voicePulse = 0;
+
+function cycleVoice(){
+  voiceIdx = (voiceIdx+1) % NPCS.length;
+  voiceNpc = Math.random() > 0.25 ? NPCS[voiceIdx] : null;
+  voiceTimer = 5 + Math.random()*7;
+  NPCS.forEach(n=>{
+    const el = document.getElementById('b-'+n.id);
+    if(!el) return;
+    if(n===voiceNpc){ el.textContent='🎙️ voz'; el.className='player-badge voice'; }
+    else            { el.textContent='online'; el.className='player-badge'; }
+  });
+}
+
+// ── NOTIFICATIONS ──
+const notifs = [];
+let notifTimer = 9000;
+const NOTIF_MSGS = [
+  '📩 Ticket: "Revisión métricas pendiente"',
+  '🔔 server-03: latencia alta (420ms)',
+  '📋 Ticket cerrado por Carlos',
+  '🚨 Alerta: CPU > 90% en prod-01',
+  '✅ Deploy completado — build #347',
+];
+
+function getRoomAt(x,y){
+  for(const r of ROOMS)
+    if(x>=r.x&&x<=r.x+r.w&&y>=r.y&&y<=r.y+r.h) return r;
+  return null;
+}
+
+// ── ROOM UI ──
+let lastRoomId = null;
+function updateRoomUI(){
+  const r = getRoomAt(player.x,player.y);
+  const nameEl = document.getElementById('panelRoom');
+  const subEl  = document.getElementById('panelRoomSub');
+  if(!nameEl) return;
+  if(r){
+    nameEl.textContent = r.name
+      .split(' ').map(w=>w[0]+w.slice(1).toLowerCase()).join(' ');
+    nameEl.style.color = r.label;
+    const others = NPCS.filter(n=>{ const nr=getRoomAt(n.x,n.y); return nr&&nr.id===r.id; });
+    subEl.textContent = others.length ? `+${others.length} persona${others.length>1?'s':''} aquí` : 'Solo tú aquí';
+    if(lastRoomId!==r.id){
+      lastRoomId=r.id;
+      showToast('📍 '+nameEl.textContent);
+    }
+  } else {
+    nameEl.textContent='Corredor';
+    nameEl.style.color='#8892b8';
+    subEl.textContent='';
+    lastRoomId=null;
+  }
+}
+
+// ── TOAST ──
+function showToast(msg){
+  let t = document.getElementById('nexoToast');
+  if(!t){
+    t=document.createElement('div');
+    t.id='nexoToast';
+    t.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(70px);'+
+      'background:#1a1f3c;border:1px solid #00c8a0;color:#e8eaf6;'+
+      'padding:9px 20px;border-radius:9px;font-size:13px;font-weight:600;'+
+      'z-index:9999;transition:transform .3s ease;pointer-events:none;'+
+      'box-shadow:0 0 20px rgba(0,200,160,0.25);white-space:nowrap;';
+    document.body.appendChild(t);
+  }
+  t.textContent=msg;
+  t.style.transform='translateX(-50%) translateY(0)';
+  clearTimeout(t._t);
+  t._t=setTimeout(()=>{ t.style.transform='translateX(-50%) translateY(70px)'; },2200);
+}
+
+// ── UPDATE ──
+function update(dt){
+  // Player
+  let vx=0,vy=0;
+  if(keys['ArrowLeft'] ||keys['a']||keys['A']) vx-=1;
+  if(keys['ArrowRight']||keys['d']||keys['D']) vx+=1;
+  if(keys['ArrowUp']   ||keys['w']||keys['W']) vy-=1;
+  if(keys['ArrowDown'] ||keys['s']||keys['S']) vy+=1;
+  if(vx&&vy){vx*=0.707;vy*=0.707;}
+  player.x=Math.max(10,Math.min(W-10,player.x+vx*player.speed*dt));
+  player.y=Math.max(10,Math.min(H-10,player.y+vy*player.speed*dt));
+
+  // NPCs
+  for(const n of NPCS){
+    if(n.wait>0){ n.wait-=dt; }
+    else{
+      const dx=n.tx-n.x, dy=n.ty-n.y;
+      const d=Math.sqrt(dx*dx+dy*dy);
+      if(d<4){ pickTarget(n); }
+      else{
+        const sp=52+Math.random()*8;
+        n.x=Math.max(14,Math.min(W-14,n.x+(dx/d)*sp*dt));
+        n.y=Math.max(14,Math.min(H-14,n.y+(dy/d)*sp*dt));
+      }
+    }
+    if(n.chatCD>0) n.chatCD-=dt;
+    if(n.bubble){ n.bubble.life-=dt; if(n.bubble.life<=0) n.bubble=null; }
+  }
+
+  // Voice
+  voicePulse+=dt;
+  voiceTimer-=dt;
+  if(voiceTimer<=0) cycleVoice();
+
+  // Chat
+  chatTimer-=dt*1000;
+  if(chatTimer<=0){
+    const eligible=NPCS.filter(n=>n.chatCD<=0);
+    if(eligible.length){
+      const n=eligible[Math.floor(Math.random()*eligible.length)];
+      const m=n.msgs[Math.floor(Math.random()*n.msgs.length)];
+      addChat(n,m);
+      n.chatCD=9+Math.random()*10;
+    }
+    chatTimer=2800+Math.random()*4000;
+  }
+
+  // Notifs
+  notifTimer-=dt*1000;
+  if(notifTimer<=0){
+    const m=NOTIF_MSGS[Math.floor(Math.random()*NOTIF_MSGS.length)];
+    notifs.push({text:m,life:3.5});
+    notifTimer=12000+Math.random()*10000;
+  }
+  for(let i=notifs.length-1;i>=0;i--){
+    notifs[i].life-=dt;
+    if(notifs[i].life<=0) notifs.splice(i,1);
+  }
+
+  updateRoomUI();
+}
+
+// ── DRAW ──
+function drawFloor(){
+  ctx.fillStyle=C.bg;
+  ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle=C.grid;
+  ctx.lineWidth=1;
+  const G=40;
+  for(let x=0;x<W;x+=G){ ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke(); }
+  for(let y=0;y<H;y+=G){ ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke(); }
+}
+
+function drawRooms(){
+  for(const r of ROOMS){
+    ctx.fillStyle=r.fill;
+    ctx.fillRect(r.x,r.y,r.w,r.h);
+    ctx.shadowColor=r.stroke; ctx.shadowBlur=10;
+    ctx.strokeStyle=r.stroke; ctx.lineWidth=1.5;
+    ctx.strokeRect(r.x+.5,r.y+.5,r.w-1,r.h-1);
+    ctx.shadowBlur=0;
+    ctx.fillStyle=r.label;
+    ctx.font='bold 9px monospace';
+    ctx.textAlign='left';
+    ctx.fillText(r.name,r.x+10,r.y+15);
+  }
+}
+
+function drawDecor(){
+  for(const d of DECOR){
+    ctx.fillStyle=d.c;
+    ctx.fillRect(d.x,d.y,d.w,d.h);
+  }
+  // Chair lines on meeting table
+  ctx.strokeStyle='rgba(0,200,160,0.15)';ctx.lineWidth=1;
+  for(let i=0;i<4;i++){
+    const cx=510+i*46;
+    ctx.beginPath();ctx.moveTo(cx,72);ctx.lineTo(cx,147);ctx.stroke();
+  }
+  // Glowing screens
+  for(const s of SCREENS){
+    ctx.shadowColor=s.c; ctx.shadowBlur=8;
+    ctx.fillStyle=s.c;
+    ctx.fillRect(s.x,s.y,s.w,s.h);
+    ctx.shadowBlur=0;
+    // Scanline effect on screens
+    ctx.fillStyle='rgba(0,0,0,0.2)';
+    for(let sy=s.y;sy<s.y+s.h;sy+=3){
+      ctx.fillRect(s.x,sy,s.w,1);
+    }
+  }
+}
+
+function hex2rgb(hex){
+  const n=parseInt(hex.replace('#',''),16);
+  return [(n>>16)&255,(n>>8)&255,n&255];
+}
+
+function lighter(hex,a){
+  const [r,g,b]=hex2rgb(hex);
+  return `rgba(${Math.min(255,r+a)},${Math.min(255,g+a)},${Math.min(255,b+a)},1)`;
+}
+
+function drawChar(x,y,color,name,size,isVoice,bubble,isSelf){
+  const cx=Math.round(x), cy=Math.round(y);
+  const bw=size*1.5, bh=size*1.8;
+
+  // Shadow
+  ctx.fillStyle='rgba(0,0,0,0.35)';
+  ctx.beginPath();
+  ctx.ellipse(cx,cy+bh*.5+3,bw*.7,bh*.2,0,0,Math.PI*2);
+  ctx.fill();
+
+  // Voice ring
+  if(isVoice){
+    const p=.5+.5*Math.sin(voicePulse*5);
+    ctx.globalAlpha=.35+.4*p;
+    ctx.strokeStyle=color;ctx.lineWidth=2.5;
+    ctx.beginPath();ctx.arc(cx,cy,size+10+p*5,0,Math.PI*2);ctx.stroke();
+    ctx.globalAlpha=1;
+  }
+
+  // Self indicator (dashed outline)
+  if(isSelf){
+    ctx.strokeStyle='#22c55e';ctx.lineWidth=1.5;
+    ctx.setLineDash([2,2]);
+    ctx.strokeRect(cx-bw*.5-4,cy-bh*.5-2,bw+8,bh+6);
+    ctx.setLineDash([]);
+  }
+
+  // Body
+  ctx.fillStyle=color;
+  ctx.beginPath();
+  ctx.roundRect(cx-bw*.5,cy-bh*.5+3,bw,bh,4);
+  ctx.fill();
+
+  // Head
+  ctx.fillStyle=lighter(color,25);
+  ctx.beginPath();
+  ctx.arc(cx,cy-bh*.5+3,size*.9,0,Math.PI*2);
+  ctx.fill();
+
+  // Eyes
+  ctx.fillStyle='rgba(0,0,0,0.7)';
+  ctx.fillRect(cx-4,cy-bh*.5+1,3,3);
+  ctx.fillRect(cx+1,cy-bh*.5+1,3,3);
+
+  // Name tag
+  const tagY=cy-bh*.5-size*.9-15;
+  ctx.font='bold 9px monospace';
+  ctx.textAlign='center';
+  const tw=ctx.measureText(name).width+10;
+  ctx.fillStyle='rgba(13,16,32,0.88)';
+  ctx.beginPath();ctx.roundRect(cx-tw*.5,tagY,tw,13,3);ctx.fill();
+  ctx.fillStyle=isSelf?'#22c55e':color;
+  ctx.fillText(name,cx,tagY+10);
+
+  // Chat bubble
+  if(bubble){
+    const life=bubble.life;
+    const alpha=Math.min(1,life*.8)*Math.min(1,(life>2.8?1:(life/0.4)));
+    ctx.globalAlpha=alpha;
+    const txt=bubble.text.length>22?bubble.text.slice(0,22)+'…':bubble.text;
+    ctx.font='10px -apple-system,Segoe UI,sans-serif';
+    const btw=ctx.measureText(txt).width+16;
+    const bty=tagY-22;
+    ctx.fillStyle='rgba(26,31,60,0.94)';
+    ctx.strokeStyle=color;ctx.lineWidth=1;
+    ctx.beginPath();ctx.roundRect(cx-btw*.5,bty,btw,18,5);ctx.fill();ctx.stroke();
+    // Tail
+    ctx.fillStyle='rgba(26,31,60,0.94)';
+    ctx.beginPath();ctx.moveTo(cx-4,bty+18);ctx.lineTo(cx+4,bty+18);ctx.lineTo(cx,bty+24);ctx.fill();
+    ctx.strokeStyle=color;ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(cx-4,bty+18);ctx.lineTo(cx,bty+24);ctx.lineTo(cx+4,bty+18);ctx.stroke();
+    ctx.fillStyle='#e8eaf6';
+    ctx.textAlign='center';
+    ctx.fillText(txt,cx,bty+13);
+    ctx.globalAlpha=1;
+  }
+}
+
+function drawNotifs(){
+  let yi=0;
+  for(const n of notifs){
+    const alpha=Math.min(1,n.life*.8)*Math.min(1,(n.life>3?1:n.life/0.4));
+    ctx.globalAlpha=alpha;
+    ctx.font='11px -apple-system,Segoe UI,sans-serif';
+    ctx.textAlign='right';
+    const tw=ctx.measureText(n.text).width+18;
+    const y=H-16-yi*28;
+    ctx.fillStyle='rgba(26,31,60,0.92)';
+    ctx.strokeStyle='#6366f1';ctx.lineWidth=1;
+    ctx.beginPath();ctx.roundRect(W-tw-8,y-18,tw,22,6);ctx.fill();ctx.stroke();
+    ctx.fillStyle='#e8eaf6';
+    ctx.fillText(n.text,W-16,y-2);
+    ctx.globalAlpha=1;
+    yi++;
+  }
+  ctx.textAlign='left';
+}
+
+function render(){
+  drawFloor();
+  drawRooms();
+  drawDecor();
+  for(const n of NPCS)
+    drawChar(n.x,n.y,n.color,n.name,n.size,n===voiceNpc,n.bubble||null,false);
+  drawChar(player.x,player.y,player.color,player.name,player.size,false,null,true);
+  drawNotifs();
+}
+
+// ── LOOP ──
+let last=0;
+function loop(ts){
+  const dt=Math.min((ts-last)/1000,.05);
+  last=ts;
+  update(dt);
+  render();
+  requestAnimationFrame(loop);
+}
+
+// ── INIT ──
+for(const n of NPCS){
+  pickTarget(n);
+  n.chatCD=Math.random()*6;
+}
+cycleVoice();
+requestAnimationFrame(loop);
+
+})();
+</script>
+</body>
+</html>
