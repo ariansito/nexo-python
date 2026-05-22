@@ -5,8 +5,8 @@
     "passwordHash": "scrypt:f7ffe8f9983a0216a90f8c241a453b3d:f9f7593edde55576a7b8862dcffb44683cc1864677b84e14450bfaae299ce8ea21996a1ddaad8f92ea153472a067cbdc2c4a16121356c1bf05ce034bde086449",
     "role": "admin",
     "position": {
-      "x": 1472,
-      "y": 435
+      "x": 1196,
+      "y": 663
     },
     "muted": false,
     "avatar": {
