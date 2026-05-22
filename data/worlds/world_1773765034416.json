@@ -1,0 +1,1244 @@
+{
+  "worldW": 2000,
+  "worldH": 1500,
+  "rooms": [
+    {
+      "id": "off_1",
+      "name": "Oficina 1",
+      "color": "#6366f1",
+      "x": 40,
+      "y": 40,
+      "w": 210,
+      "h": 210
+    },
+    {
+      "id": "off_2",
+      "name": "Oficina 2",
+      "color": "#8b5cf6",
+      "x": 262,
+      "y": 40,
+      "w": 210,
+      "h": 210
+    },
+    {
+      "id": "off_3",
+      "name": "Oficina 3",
+      "color": "#ec4899",
+      "x": 484,
+      "y": 40,
+      "w": 210,
+      "h": 210
+    },
+    {
+      "id": "off_4",
+      "name": "Oficina 4",
+      "color": "#f59e0b",
+      "x": 706,
+      "y": 40,
+      "w": 210,
+      "h": 210
+    },
+    {
+      "id": "off_5",
+      "name": "Oficina 5",
+      "color": "#10b981",
+      "x": 928,
+      "y": 40,
+      "w": 210,
+      "h": 210
+    },
+    {
+      "id": "off_6",
+      "name": "Oficina 6",
+      "color": "#06b6d4",
+      "x": 1150,
+      "y": 40,
+      "w": 210,
+      "h": 210
+    },
+    {
+      "id": "pasillo-horiz",
+      "name": "Pasillo",
+      "color": "#475569",
+      "x": 40,
+      "y": 250,
+      "w": 1542,
+      "h": 90
+    },
+    {
+      "id": "sala-principal",
+      "name": "Sala Principal",
+      "color": "#f59e0b",
+      "x": 40,
+      "y": 340,
+      "w": 960,
+      "h": 1120
+    },
+    {
+      "id": "noc",
+      "name": "Sala de Monitoreo NOC",
+      "color": "#ff0000",
+      "x": 1024,
+      "y": 336,
+      "w": 900,
+      "h": 480
+    },
+    {
+      "id": "sala-comun",
+      "name": "Sala Común",
+      "color": "#8b5cf6",
+      "x": 1060,
+      "y": 820,
+      "w": 900,
+      "h": 400
+    },
+    {
+      "id": "pasillo-spawn",
+      "name": "Pasillo",
+      "color": "#475569",
+      "x": 1060,
+      "y": 1220,
+      "w": 900,
+      "h": 80
+    },
+    {
+      "id": "spawn",
+      "name": "Spawn",
+      "color": "#10b981",
+      "x": 1060,
+      "y": 1300,
+      "w": 900,
+      "h": 160
+    },
+    {
+      "id": "room_1776269769083",
+      "name": "PELEA",
+      "color": "#6366f1",
+      "x": 1376,
+      "y": 32,
+      "w": 576,
+      "h": 208
+    }
+  ],
+  "walls": [
+    {
+      "id": "w_bet_12",
+      "x": 252,
+      "y": 40,
+      "w": 10,
+      "h": 210,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_bet_23",
+      "x": 474,
+      "y": 40,
+      "w": 10,
+      "h": 210,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_bet_34",
+      "x": 696,
+      "y": 40,
+      "w": 10,
+      "h": 210,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_bet_45",
+      "x": 918,
+      "y": 40,
+      "w": 10,
+      "h": 210,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_bet_56",
+      "x": 1140,
+      "y": 40,
+      "w": 10,
+      "h": 210,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_bet_67",
+      "x": 1362,
+      "y": 40,
+      "w": 10,
+      "h": 210,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_off1_bL",
+      "x": 40,
+      "y": 248,
+      "w": 55,
+      "h": 10,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_off1_bR",
+      "x": 195,
+      "y": 248,
+      "w": 128,
+      "h": 8,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_off2_bR",
+      "x": 417,
+      "y": 248,
+      "w": 128,
+      "h": 8,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_off3_bR",
+      "x": 639,
+      "y": 248,
+      "w": 128,
+      "h": 8,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_off5_bL",
+      "x": 864,
+      "y": 248,
+      "w": 128,
+      "h": 8,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_off5_bR",
+      "x": 1080,
+      "y": 248,
+      "w": 128,
+      "h": 8,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_off6_bR",
+      "x": 1305,
+      "y": 248,
+      "w": 128,
+      "h": 8,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_off7_bR",
+      "x": 1527,
+      "y": 248,
+      "w": 432,
+      "h": 8,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_pasB_L1",
+      "x": 40,
+      "y": 320,
+      "w": 260,
+      "h": 32,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_pasB_L2",
+      "x": 432,
+      "y": 320,
+      "w": 260,
+      "h": 32,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_pasB_L3",
+      "x": 820,
+      "y": 320,
+      "w": 192,
+      "h": 32,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_pasB_R1",
+      "x": 1056,
+      "y": 320,
+      "w": 320,
+      "h": 32,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_pasB_R2",
+      "x": 1456,
+      "y": 320,
+      "w": 464,
+      "h": 32,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_div_v_c",
+      "x": 1008,
+      "y": 1120,
+      "w": 64,
+      "h": 96,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_div_v_d",
+      "x": 1008,
+      "y": 1296,
+      "w": 64,
+      "h": 160,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_sc_pas",
+      "x": 1072,
+      "y": 1184,
+      "w": 880,
+      "h": 32,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_pas_sp1",
+      "x": 1072,
+      "y": 1296,
+      "w": 368,
+      "h": 32,
+      "color": "#1e293b"
+    },
+    {
+      "id": "w_pas_sp2",
+      "x": 1568,
+      "y": 1298,
+      "w": 384,
+      "h": 32,
+      "color": "#1e293b"
+    },
+    {
+      "id": "wall_1774362488176",
+      "x": 1920,
+      "y": 320,
+      "w": 32,
+      "h": 496,
+      "color": "#334155"
+    },
+    {
+      "id": "wall_1774362503613",
+      "x": 1056,
+      "y": 816,
+      "w": 896,
+      "h": 34,
+      "color": "#334155"
+    },
+    {
+      "id": "wall_1774362553462",
+      "x": 1008,
+      "y": 656,
+      "w": 53,
+      "h": 340,
+      "color": "#334155"
+    },
+    {
+      "id": "wall_1774363865578",
+      "x": 1008,
+      "y": 320,
+      "w": 48,
+      "h": 224,
+      "color": "#334155"
+    },
+    {
+      "id": "wall_1774449604124",
+      "x": 1584,
+      "y": 352,
+      "w": 32,
+      "h": 368,
+      "color": "#334155"
+    }
+  ],
+  "floors": [
+    {
+      "id": "floor_1773765267602",
+      "type": "carpet-blue",
+      "x": 1360,
+      "y": 1344,
+      "w": 313,
+      "h": 123
+    },
+    {
+      "id": "floor_1774446012037",
+      "type": "tile",
+      "x": 944,
+      "y": 320,
+      "w": 80,
+      "h": 1136
+    },
+    {
+      "id": "floor_1774446032078",
+      "type": "tile",
+      "x": 976,
+      "y": 1232,
+      "w": 928,
+      "h": 32
+    },
+    {
+      "id": "floor_1774446068294",
+      "type": "tile",
+      "x": 1456,
+      "y": 1264,
+      "w": 96,
+      "h": 64
+    },
+    {
+      "id": "floor_1774632567267",
+      "type": "tile",
+      "x": 32,
+      "y": 352,
+      "w": 944,
+      "h": 48
+    },
+    {
+      "id": "floor_1774632596333",
+      "type": "tile",
+      "x": 32,
+      "y": 384,
+      "w": 80,
+      "h": 1088
+    },
+    {
+      "id": "floor_1774632605652",
+      "type": "tile",
+      "x": 48,
+      "y": 1408,
+      "w": 944,
+      "h": 32
+    },
+    {
+      "id": "floor_1774633870859",
+      "type": "carpet-blue",
+      "x": 424,
+      "y": 720,
+      "w": 208,
+      "h": 160
+    }
+  ],
+  "items": [
+    {
+      "id": "item_1773765389464_3im3p8dg2ev",
+      "type": "carpet",
+      "x": 1336,
+      "y": 584,
+      "rotation": 0,
+      "scale": 4.6
+    },
+    {
+      "id": "item_1773765418434_s6xjatlbi9j",
+      "type": "conference_table",
+      "x": 1336,
+      "y": 576,
+      "rotation": 0,
+      "scale": 0.65
+    },
+    {
+      "id": "item_1773771696052_7hyocv53yi2",
+      "type": "plant",
+      "x": 1073,
+      "y": 345,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1773771701533_m5wzgiiuqgk",
+      "type": "plant",
+      "x": 1074,
+      "y": 798,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1773771707838_2ev2i4r5y52",
+      "type": "plant",
+      "x": 1080,
+      "y": 648,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1773771724927_smt9idry79",
+      "type": "tv",
+      "x": 1161,
+      "y": 349,
+      "rotation": 0,
+      "scale": 1.5,
+      "collideOverride": false
+    },
+    {
+      "id": "item_1773771728294_rzgc3e66e3d",
+      "type": "tv",
+      "x": 1255,
+      "y": 349,
+      "rotation": 0,
+      "scale": 1.5,
+      "collideOverride": false
+    },
+    {
+      "id": "item_1773771752393_lkm7hb9j2zg",
+      "type": "trash",
+      "x": 1080,
+      "y": 696,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1773771786733_5hdisahll43",
+      "type": "whiteboard",
+      "x": 1520,
+      "y": 352,
+      "rotation": 0,
+      "scale": 1.5,
+      "collideOverride": false
+    },
+    {
+      "id": "item_1773776671007_o9j20l387q",
+      "type": "kart",
+      "x": 1355,
+      "y": 803,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1773864010674_sbfuj4e5l6",
+      "type": "monitor_tablet",
+      "x": 1400,
+      "y": 576,
+      "rotation": 0,
+      "scale": 0.6,
+      "collideOverride": false
+    },
+    {
+      "id": "item_1773876567720_p5cez0v6zie",
+      "type": "library",
+      "x": 1873,
+      "y": 351,
+      "rotation": 0,
+      "scale": 1.5,
+      "links": [
+        {
+          "title": "payins ",
+          "url": ""
+        },
+        {
+          "title": "payouts",
+          "url": ""
+        }
+      ],
+      "libName": "LINKS datadog"
+    },
+    {
+      "id": "item_1773876756823_zdsjb35l3d",
+      "type": "library",
+      "x": 1774,
+      "y": 351,
+      "rotation": 0,
+      "scale": 1.5,
+      "links": [],
+      "libName": "Capacitaciones"
+    },
+    {
+      "id": "item_1773876915726_o8ifvrwi2s",
+      "type": "library",
+      "x": 1672,
+      "y": 352,
+      "rotation": 0,
+      "scale": 1.5,
+      "links": [],
+      "libName": "CONFLUENCE"
+    },
+    {
+      "id": "item_1774200595166_eon1i6d6rjc",
+      "type": "chair_executive",
+      "x": 1336,
+      "y": 488,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774200597400_jbhqpem90jb",
+      "type": "chair_executive",
+      "x": 1416,
+      "y": 488,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774200605695_1thickoip7h",
+      "type": "chair_executive",
+      "x": 1488,
+      "y": 540,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774200606990_u2sj2x3lrzd",
+      "type": "chair_executive",
+      "x": 1488,
+      "y": 592,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774200608303_9yo66fpi63o",
+      "type": "chair_executive",
+      "x": 1184,
+      "y": 540,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774200609116_ppx93qdrhp",
+      "type": "chair_executive",
+      "x": 1184,
+      "y": 596,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774200615452_lw7wmmz63j",
+      "type": "chair_executive",
+      "x": 1224,
+      "y": 664,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774200616399_ojcft6anmq",
+      "type": "chair_executive",
+      "x": 1448,
+      "y": 664,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774200617302_tp3bh0vprh",
+      "type": "chair_executive",
+      "x": 1376,
+      "y": 664,
+      "rotation": 0,
+      "scale": 0.95
+    },
+    {
+      "id": "item_1774200618756_pal7cgzi9h",
+      "type": "chair_executive",
+      "x": 1296,
+      "y": 664,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774446245016_tgqw8emi7z",
+      "type": "door_glass_panel",
+      "x": 1416,
+      "y": 336,
+      "rotation": 0,
+      "scale": 1.8
+    },
+    {
+      "id": "item_1774446250649_o5rz5cco95a",
+      "type": "door_glass_panel",
+      "x": 1032,
+      "y": 600,
+      "rotation": 270,
+      "scale": 2.5
+    },
+    {
+      "id": "item_1774449705652_lwt8ov84dmh",
+      "type": "door_wood",
+      "x": 1600,
+      "y": 768,
+      "rotation": 270,
+      "scale": 2.2
+    },
+    {
+      "id": "item_1774450293969_pi6si5t2rn",
+      "type": "meeting_table",
+      "x": 1772,
+      "y": 540,
+      "rotation": 0,
+      "scale": 2.2
+    },
+    {
+      "id": "item_1774450320367_a8e5rp24m4",
+      "type": "turntable",
+      "x": 1080,
+      "y": 416,
+      "rotation": 0,
+      "scale": 0.95
+    },
+    {
+      "id": "item_1774450340433_rukzdhnh07",
+      "type": "lamp",
+      "x": 1096,
+      "y": 352,
+      "rotation": 0,
+      "scale": 0.95
+    },
+    {
+      "id": "item_1774450464849_0boj65fqzy0t",
+      "type": "couch",
+      "x": 1772,
+      "y": 468,
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "item_1774450466446_1oo2g38ryfe",
+      "type": "couch",
+      "x": 1776,
+      "y": 616,
+      "rotation": 0,
+      "scale": 1.3
+    },
+    {
+      "id": "item_1774542208672_532uzieigos",
+      "type": "desk",
+      "x": 1032,
+      "y": 56,
+      "rotation": 0,
+      "scale": 2
+    },
+    {
+      "id": "item_1774542211655_rgj55jgcfd",
+      "type": "desk",
+      "x": 1256,
+      "y": 56,
+      "rotation": 0,
+      "scale": 2
+    },
+    {
+      "id": "item_1774542213382_wpdy9kd1xqc",
+      "type": "desk",
+      "x": 808,
+      "y": 56,
+      "rotation": 0,
+      "scale": 2
+    },
+    {
+      "id": "item_1774542215542_w5vh8zs3s8",
+      "type": "desk",
+      "x": 592,
+      "y": 56,
+      "rotation": 0,
+      "scale": 2
+    },
+    {
+      "id": "item_1774542224514_9rkntetv2si",
+      "type": "desk",
+      "x": 368,
+      "y": 64,
+      "rotation": 0,
+      "scale": 2
+    },
+    {
+      "id": "item_1774542231917_itugqdygqy",
+      "type": "desk",
+      "x": 136,
+      "y": 56,
+      "rotation": 0,
+      "scale": 2
+    },
+    {
+      "id": "item_1774542304385_i28ovfp0m3j",
+      "type": "filing_cabinet",
+      "x": 1112,
+      "y": 56,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542307312_rlw577kz6f",
+      "type": "filing_cabinet",
+      "x": 1336,
+      "y": 56,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542310965_u8znyeqm6wm",
+      "type": "filing_cabinet",
+      "x": 888,
+      "y": 56,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542312101_wow32c4pto",
+      "type": "filing_cabinet",
+      "x": 672,
+      "y": 56,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542315285_evutmlvngn7",
+      "type": "filing_cabinet",
+      "x": 448,
+      "y": 56,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542316916_6lx6jn046oi",
+      "type": "filing_cabinet",
+      "x": 224,
+      "y": 56,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542368163_1acizo13iilj",
+      "type": "chair",
+      "x": 808,
+      "y": 96,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542370044_x6k3l49aqe",
+      "type": "chair",
+      "x": 584,
+      "y": 88,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542371763_6etti9ubh5i",
+      "type": "chair",
+      "x": 368,
+      "y": 96,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542372719_ifdtar0w6p",
+      "type": "chair",
+      "x": 136,
+      "y": 96,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542374665_95vckbbqlhf",
+      "type": "chair",
+      "x": 1024,
+      "y": 96,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542376221_4kx746e395d",
+      "type": "chair",
+      "x": 1264,
+      "y": 104,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542444923_muw2g966utj",
+      "type": "table_glass",
+      "x": 1808,
+      "y": 936,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542446403_e73fl6eh4yt",
+      "type": "table_glass",
+      "x": 1808,
+      "y": 1056,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542448780_1idg80zpk0y",
+      "type": "table_glass",
+      "x": 1336,
+      "y": 944,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542450477_6wzsgxb959j",
+      "type": "table_glass",
+      "x": 1336,
+      "y": 1056,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542452283_n54iaylf49r",
+      "type": "table_glass",
+      "x": 1568,
+      "y": 936,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542453635_jvge83pqyfh",
+      "type": "table_glass",
+      "x": 1568,
+      "y": 1056,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542457288_ohpxhdzv5f",
+      "type": "chair",
+      "x": 1648,
+      "y": 936,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542458564_ubbpcm44oth",
+      "type": "chair",
+      "x": 1488,
+      "y": 936,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542459734_r70jkmk3ji",
+      "type": "chair",
+      "x": 1488,
+      "y": 1056,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542460771_6p4owy66bkr",
+      "type": "chair",
+      "x": 1648,
+      "y": 1056,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542470611_7oxixlctlc5",
+      "type": "chair",
+      "x": 1728,
+      "y": 936,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542471881_rx1a5w35exp",
+      "type": "chair",
+      "x": 1888,
+      "y": 944,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542472876_ky4lxcj9dpa",
+      "type": "chair",
+      "x": 1728,
+      "y": 1056,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542473765_0tt34jie36pm",
+      "type": "chair",
+      "x": 1888,
+      "y": 1056,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542475062_irx401mn96",
+      "type": "chair",
+      "x": 1416,
+      "y": 1056,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542476255_j1kcwk8z04a",
+      "type": "chair",
+      "x": 1416,
+      "y": 936,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542477181_bkfwgnuyfdg",
+      "type": "chair",
+      "x": 1256,
+      "y": 936,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542478041_jxocsvmctf9",
+      "type": "chair",
+      "x": 1256,
+      "y": 1056,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542562962_7d3ki71mtie",
+      "type": "fridge",
+      "x": 1088,
+      "y": 960,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542566024_bjqsdbta4of",
+      "type": "trash",
+      "x": 1080,
+      "y": 864,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542569961_m3okddumaw",
+      "type": "trash",
+      "x": 1336,
+      "y": 224,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542571555_uhxeestjnk",
+      "type": "trash",
+      "x": 1112,
+      "y": 224,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542572793_ne8qtl35a0o",
+      "type": "trash",
+      "x": 888,
+      "y": 224,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542574055_pd2nr1djzh",
+      "type": "trash",
+      "x": 672,
+      "y": 224,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542577544_m5pxrh8x0ps",
+      "type": "trash",
+      "x": 448,
+      "y": 224,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542578922_v1eie5rhty",
+      "type": "trash",
+      "x": 224,
+      "y": 224,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774542620914_jj7mxttjx9k",
+      "type": "coffee_machine",
+      "x": 1120,
+      "y": 848,
+      "rotation": 0,
+      "scale": 1.5
+    },
+    {
+      "id": "item_1774545437209_2jwkb0ax0ww",
+      "type": "door_glass_panel",
+      "x": 1256,
+      "y": 252,
+      "rotation": 0,
+      "scale": 2.15
+    },
+    {
+      "id": "item_1774629357704_uwrzorvfohh",
+      "type": "chair",
+      "x": 1648,
+      "y": 72,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774629359832_m1ymzonymxq",
+      "type": "chair",
+      "x": 1648,
+      "y": 112,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774629361988_t6dx0ubm4f9",
+      "type": "chair",
+      "x": 1648,
+      "y": 152,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774629363431_6kiu4w6prp7",
+      "type": "chair",
+      "x": 1648,
+      "y": 192,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774629365102_egguz5wdgvv",
+      "type": "chair",
+      "x": 1616,
+      "y": 72,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774629366260_tdv10y82do",
+      "type": "chair",
+      "x": 1616,
+      "y": 112,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774629368414_hye4pi96yti",
+      "type": "chair",
+      "x": 1616,
+      "y": 152,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774629370402_ex0btcwepfa",
+      "type": "chair",
+      "x": 1616,
+      "y": 192,
+      "rotation": 0,
+      "scale": 1
+    },
+    {
+      "id": "item_1774629498243_p4r7fwxyi7o",
+      "type": "boxing_ring",
+      "x": 1800,
+      "y": 136,
+      "rotation": 0,
+      "scale": 1.15
+    },
+    {
+      "id": "item_1774633447752_ay07ewv0mtf",
+      "type": "_img",
+      "src": "/uploads/noc.png",
+      "w": 95,
+      "h": 96,
+      "x": 1264,
+      "y": 576,
+      "rotation": 0,
+      "scale": 1,
+      "collideOverride": false,
+      "interactionOverride": "none"
+    },
+    {
+      "id": "item_1774633892836_8yp12hrwxfm",
+      "type": "tv",
+      "x": 496,
+      "y": 352,
+      "rotation": 0,
+      "scale": 2
+    },
+    {
+      "id": "item_1774633898170_brjh6135zhm",
+      "type": "tv",
+      "x": 624,
+      "y": 352,
+      "rotation": 0,
+      "scale": 2
+    },
+    {
+      "id": "item_1774634155073_bjeeoo119q",
+      "type": "couch",
+      "x": 584,
+      "y": 664,
+      "rotation": 0,
+      "scale": 1.35
+    },
+    {
+      "id": "item_1774634157356_km32ucc1fls",
+      "type": "couch",
+      "x": 360,
+      "y": 760,
+      "rotation": 270,
+      "scale": 1.4
+    },
+    {
+      "id": "item_1774634159482_4a8ook1hnvm",
+      "type": "couch",
+      "x": 480,
+      "y": 664,
+      "rotation": 0,
+      "scale": 1.35
+    },
+    {
+      "id": "item_1774634160703_h6godxassfk",
+      "type": "couch",
+      "x": 696,
+      "y": 760,
+      "rotation": 90,
+      "scale": 1.4
+    },
+    {
+      "id": "item_1774634161403_bzb11pskm4",
+      "type": "couch",
+      "x": 696,
+      "y": 864,
+      "rotation": 90,
+      "scale": 1.4
+    },
+    {
+      "id": "item_1774634162250_najwm1b52bo",
+      "type": "couch",
+      "x": 360,
+      "y": 864,
+      "rotation": 270,
+      "scale": 1.35
+    },
+    {
+      "id": "item_1776269479266_rsjdfe685n",
+      "type": "_img",
+      "src": "/uploads/fuente_de_agua.gif",
+      "w": 207,
+      "h": 255,
+      "x": 528,
+      "y": 752,
+      "rotation": 0,
+      "scale": 1,
+      "collideOverride": false,
+      "interactionOverride": "none"
+    },
+    {
+      "id": "item_1776279165761_2p0z3sqsmjx",
+      "type": "_img",
+      "src": "/uploads/mercadolibre.svg",
+      "w": 132,
+      "h": 132,
+      "x": 1848,
+      "y": 736,
+      "rotation": 0,
+      "scale": 1,
+      "collideOverride": false,
+      "interactionOverride": "none"
+    }
+  ],
+  "name": "NOC"
+}
